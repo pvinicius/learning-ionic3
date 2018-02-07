@@ -3,30 +3,44 @@ import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 
-import { AboutPage } from '../pages/about/about';
 import { ContactPage } from '../pages/contact/contact';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { HttpModule } from '@angular/http';
+import { HttpClientModule } from '@angular/common/http'
+import { FeedPageModule } from '../pages/feed/feed.module';
+import { IntroPageModule } from '../pages/intro/intro.module';
+import { MovieProvider } from '../providers/movie/movie';
+import { ProfilePageModule } from '../pages/profile/profile.module';
+import { SettingsPageModule } from '../pages/settings/settings.module';
+import { SobrePageModule } from '../pages/sobre/sobre.module';
+import { MovieDetailsPageModule } from '../pages/movie-details/movie-details.module';
 
 @NgModule({
   declarations: [
     MyApp,
-    AboutPage,
     ContactPage,
     HomePage,
     TabsPage
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    FeedPageModule,
+    IntroPageModule,
+    HttpModule,
+    HttpClientModule,
+    SobrePageModule,
+    ProfilePageModule,
+    SettingsPageModule,
+    MovieDetailsPageModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    AboutPage,
     ContactPage,
     HomePage,
     TabsPage
@@ -34,7 +48,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    { provide: ErrorHandler, useClass: IonicErrorHandler },
+    MovieProvider,
   ]
 })
-export class AppModule {}
+export class AppModule { }

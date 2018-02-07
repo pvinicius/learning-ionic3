@@ -1,0 +1,64 @@
+<!--
+  Generated template for the FeedPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Feed</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+
+  <ion-card *ngFor="let movie of lista_movies">
+    <ion-item>
+      <ion-avatar item-start>
+        <img [src]="'https://image.tmdb.org/t/p/w500' + movie.poster_path">
+      </ion-avatar>
+      <h2>{{movie.original_title}}</h2>
+      <p>{{movie.release_date}}</p>
+    </ion-item>
+
+    <img [src]="'https://image.tmdb.org/t/p/w500' + movie.backdrop_path" />
+
+    <ion-card-content>
+      <p>{{movie.overview}}</p>
+    </ion-card-content>
+
+    <ion-row>
+      <ion-col>
+        <button ion-button icon-left clear small>
+          <ion-icon name="thumbs-up"></ion-icon>
+          <div>{{ json_feed.qtde_likes }} Likes</div>
+        </button>
+      </ion-col>
+      <ion-col>
+        <button ion-button icon-left clear small>
+          <ion-icon name="text"></ion-icon>
+          <div>{{ json_feed.qtde_comments }} Comments</div>
+        </button>
+      </ion-col>
+      <ion-col center text-center>
+        <ion-note>
+          {{ json_feed.time_comment }}
+        </ion-note>
+      </ion-col>
+    </ion-row>
+    <button ion-button block (click)="openDetails(movie)">
+      Details
+    </button>
+  </ion-card>
+
+  <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+    <ion-infinite-scroll-content></ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+
+</ion-content>
