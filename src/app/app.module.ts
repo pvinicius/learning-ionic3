@@ -18,13 +18,14 @@ import { ProfilePageModule } from '../pages/profile/profile.module';
 import { SettingsPageModule } from '../pages/settings/settings.module';
 import { SobrePageModule } from '../pages/sobre/sobre.module';
 import { MovieDetailsPageModule } from '../pages/movie-details/movie-details.module';
+import { SideMenuComponent } from '../components/side-menu/side-menu';
 
 @NgModule({
   declarations: [
     MyApp,
     ContactPage,
     HomePage,
-    TabsPage
+    TabsPage,
   ],
   imports: [
     BrowserModule,
@@ -36,14 +37,16 @@ import { MovieDetailsPageModule } from '../pages/movie-details/movie-details.mod
     SobrePageModule,
     ProfilePageModule,
     SettingsPageModule,
-    MovieDetailsPageModule
+    MovieDetailsPageModule,
+    SideMenuComponent
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
     ContactPage,
     HomePage,
-    TabsPage
+    TabsPage,
+    SideMenuComponent
   ],
   providers: [
     StatusBar,

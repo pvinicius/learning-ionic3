@@ -16,7 +16,7 @@ import { MovieDetailsPage } from '../movie-details/movie-details';
   templateUrl: 'feed.html',
   providers: [
     MovieProvider
-  ]
+  ],
 })
 export class FeedPage {
 

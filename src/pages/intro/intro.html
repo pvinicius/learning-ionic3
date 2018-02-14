@@ -8,37 +8,35 @@
   <ion-slides pager>
 
     <ion-slide class="slide_image">
-      <img src="assets/imgs/slide1.png" alt="">
-      <h2>Meu app fantástico</h2>
+      <h2>Catalogo de Filmes</h2>
+      <img src="assets/imgs/capa-captain-marvel.jpg" alt="">
       <div>
-        <p>Este meu app tera funções incríveis.Ele foi feito para impressionar você.</p>
+        <p></p>
         <br/>
+      </div>
+    </ion-slide>
+
+    <ion-slide class="slide_image">
+      <img src="assets/imgs/capa-rampage.jpg" alt="">
+      <div>
+        <p>Você vai encontrar toda informação sobre os filmes que você mais gosta.</p>
+        <ion-list>
+          <ion-item>Resumo</ion-item>
+          <ion-item>Trailler</ion-item>
+          <ion-item>Opinião de quem já assistiu o filme.</ion-item>
+        </ion-list>
+      </div>
+    </ion-slide>
+
+    <ion-slide class="slide_image">
+      <img src="assets/imgs/capa-caverna-do-dragao.jpg" alt="">
+      <div>
         <p>Ficou curioso?
-          <strong>Veja Mais.</strong>
+          <a (click)="goToTabsPage()">
+            <strong>Veja Mais.</strong>
+          </a>
         </p>
       </div>
-    </ion-slide>
-
-    <ion-slide class="slide_image">
-      <img src="assets/imgs/slide2.png" alt="">
-      <h2>Slide 2</h2>
-      <div>
-        <p></p>
-      </div>
-    </ion-slide>
-
-    <ion-slide class="slide_image">
-      <img src="assets/imgs/slide3.png" alt="">
-      <h2>Slide 3</h2>
-      <div>
-        <p></p>
-      </div>
-    </ion-slide>
-
-    <ion-slide class="slide_image">
-      <img src="assets/imgs/slide4.png" alt="">
-      <br/>
-      <a (click)="goToTabsPage()">Continuar</a>
     </ion-slide>
   </ion-slides>
 

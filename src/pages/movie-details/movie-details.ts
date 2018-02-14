@@ -13,7 +13,7 @@ import { MovieProvider } from '../../providers/movie/movie';
 @Component({
   selector: 'page-movie-details',
   templateUrl: 'movie-details.html',
-  providers: [MovieProvider]
+  providers: [MovieProvider],
 })
 export class MovieDetailsPage {
   public movie;
