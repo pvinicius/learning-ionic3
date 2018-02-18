@@ -19,11 +19,15 @@
 
   <ion-card *ngFor="let movie of lista_movies">
     <ion-item>
+      <div class="adjustVote">
+        <p>Nota</p>
+        <h1>{{movie.vote_average}}</h1>
+      </div>
       <ion-avatar item-start>
         <img [src]="'https://image.tmdb.org/t/p/w500' + movie.poster_path">
       </ion-avatar>
       <h2>{{movie.original_title}}</h2>
-      <p>{{movie.release_date}}</p>
+      <p displayFormat="MM/DD/YYYY">{{movie.release_date}}</p>
     </ion-item>
 
     <img [src]="'https://image.tmdb.org/t/p/w500' + movie.backdrop_path" />

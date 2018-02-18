@@ -75,7 +75,7 @@ export class FeedPage {
     this.showLoading();
     this.movieProvider.getLatestMovies(this.page).subscribe(
       (data: any) => {
-        console.log(newPage)
+        console.log(data);
         if (newPage) {
           this.lista_movies = this.lista_movies.concat(data.results);
           this.infiniteScroll.complete();

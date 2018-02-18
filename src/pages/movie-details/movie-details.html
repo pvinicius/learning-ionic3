@@ -7,7 +7,7 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>movieDetails</ion-title>
+    <ion-title>Detalhes</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -18,7 +18,9 @@
   <ion-card *ngIf="movie">
     <ion-item>
       <ion-avatar item-start>
-        <img [src]="'https://image.tmdb.org/t/p/w500' + movie.poster_path">
+        <a>
+          <img [src]="'https://image.tmdb.org/t/p/w500' + movie.poster_path">
+        </a>
       </ion-avatar>
       <h2>{{movie.original_title}}</h2>
       <p>{{movie.release_date}}</p>
@@ -29,6 +31,13 @@
     <ion-card-content>
       <p>{{movie.overview}}</p>
     </ion-card-content>
+
+    <ion-item>
+      <ion-icon name="logo-twitter" item-start></ion-icon>
+      Followers
+      <ion-badge item-end>260k</ion-badge>
+    </ion-item>
+    
   </ion-card>
 
 </ion-content>
